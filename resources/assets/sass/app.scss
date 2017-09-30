@@ -1,0 +1,80 @@
+// Variables
+@import "./bootstrap-4.0.0-beta/scss/functions";
+@import "variables";
+
+// Bootstrap
+@import "./bootstrap-4.0.0-beta/scss/bootstrap.scss";
+
+//header
+header{
+  *{
+    color: map-get($theme-colors, secondary) !important;
+  }
+}
+//main
+.article{
+  .article-meta{
+    font-size: $small-font-size;
+    margin-bottom: 0;
+  }
+  .article-body{
+    margin-top: 1rem;
+  }
+}
+.home{
+  > div{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  div:nth-child(1){
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/ISS-45_Moscow%2C_Russia_night_view.jpg/1280px-ISS-45_Moscow%2C_Russia_night_view.jpg') center bottom 100%;
+    min-height: 20rem;
+    p:last-of-type{
+      position: absolute;
+      bottom: 0;
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      background: map-get($theme-colors, primary);
+    }
+    h1, h2, h3, h4, h5, h6{
+      color: $white;
+    }
+  }
+  div:nth-child(2){
+    background: map-get($theme-colors, light);
+    min-height: 20rem;
+  }
+  div:nth-child(3){
+    background: map-get($theme-colors, tertiary);
+    min-height: 20rem;
+    h1, h2, h3, h4, h5, h6{
+      color: $white;
+    }
+  }
+}
+.widget{
+  background: map-get($theme-colors, light);
+  border: 1rem solid $body-bg;
+  padding: 1rem;
+}
+//footer
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 5rem;
+  border-bottom: 1rem solid $body-bg;
+}
+footer{
+  background: map-get($theme-colors, light);
+  color: map-get($theme-colors, dark);
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
+  line-height: 5rem;
+  width: 100%;
+}
